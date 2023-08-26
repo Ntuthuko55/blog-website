@@ -1,0 +1,69 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en";>
+  <head>
+    <!--required meta tags-->
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=ys">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <!--link rel="stylesheet" type="text/css" href="./css/custom.css"-->
+    <title>HOME</title>
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <h1>Mondli</h1>
+      <li><a href="{% url 'myApp:list' %}">LIST all Topics</a><li>
+    </div>
+  </div>
+    <!--optionnal javascript-->
+    <!-- jQuery first , then popper.js, then Bootstrap JS -->
+   
+    <div class="destinations" id="destinations">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_subtitle">simply amazing places</div>
+                    <div class="section_title">
+                        <h2>Popular Destinations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row destinations_row">
+                <div class="col">
+                    <div class="destinations_container item_grid">
+                       
+                        {% for dest in desti %}
+                        
+                        <div class="destination_image">
+                            <div class="col"><img href="#" src="{{dest.img.url}}" alt="" class="img-thumbnail"></div>
+                            <div class="spec_offer text-center"><a href="{% url 'myApp:details' id=dest.id %}">{{dest.id}}</a></div>
+                        </div>
+                    
+                       
+                        {% endfor %}
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+      
+        <footer class="blockquote-footer">From WWF's website</footer>
+      </blockquote>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html lang="en";>
+<head>
+<p>Are you sure you want to delete "{{dests.name}}</p>
+
+</head>
+
+<form action="{% url 'myApp:delete' dests.id %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'myApp:list'%}">Cancel</a>
+    <input type ="submit" name="Confirm">
+</form>
+
+</html>
